@@ -3,6 +3,14 @@
   - Cázares Trejo Leonardo Damián
   - Rivera Gálvez Ernesto
 
+- [Particle Swarm Optimization (PSO) paralell implementation using Julia's wraper for MPI](#particle-swarm-optimization-pso-paralell-implementation-using-julias-wraper-for-mpi)
+    - [Objetivo:](#objetivo)
+    - [Modelo Secuencial](#modelo-secuencial)
+      - [Análisis de Tiempo](#análisis-de-tiempo)
+      - [Análisis de Escalabilidad](#análisis-de-escalabilidad)
+    - [Modelo Paralelizado con MPI](#modelo-paralelizado-con-mpi)
+
+
 ### Objetivo:
 - Implementar el algorítmo de optimización PSO de forma secuencial.
 - Implementar el algorítmo de optimización PSO de forma paralela.
