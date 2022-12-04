@@ -1,0 +1,17 @@
+5101 milliseconds
+5161 milliseconds
+5138 milliseconds
+5132 milliseconds
+5427 milliseconds
+5089 milliseconds
+5044 milliseconds
+5054 milliseconds
+5098 milliseconds
+5042 milliseconds
+
+
+[5101, 5161, 5138, 5132, 5427, 5089, 5044, 5054, 5098, 5042]
+min: 5042
+max: 5427
+media: 5128.6 ms
+std: 106.62101106254808 ms
