@@ -12,6 +12,7 @@
       - [Análisis de Escalabilidad](#análisis-de-escalabilidad)
     - [Modelo Paralelizado con MPI](#modelo-paralelizado-con-mpi)
       - [Análisis de Tiempo](#análisis-de-tiempo-1)
+      - [Análisis del Error](#análisis-del-error)
 
 
 ### Objetivo:
@@ -64,4 +65,30 @@ El tercer escenario permite a cada hilo realizar la misma tarea y finalmente el 
 Una vez que decidimos qué paralelizar, hay que decidir cómo hacerlo. En este caso utilizaremos un servidor con múltiples procesadores, por lo que es conveniente hacer una implementación con paralelización con memoria distribuída. Utilizaremos MPI para realizar el cometido, Julia cuenta con un wraper que permite utilizar MPI escribiendo código únicamente en Julia. Utilizando el wraper conseguimos la siguiente implementación [pso_mpi.jl](https://github.com/neto-riga/CC_2023-I_PSO/blob/main/pso_mpi.jl). Utiliza la función pso secuencial ya mencionada, que será la que ejecute cada hilo.
 
 #### Análisis de Tiempo
-Para compararlo con el secuencial, utilizaremos los mismos valores tomados en el secuencial, de igual forma ejecutaremos el siguiente comando en la terminal para utilizar
+Para compararlo con el secuencial, utilizaremos los mismos parámetros tomados en el secuencial, de igual forma ejecutaremos el siguiente comando en la terminal para guardar el tiempo de ejecución
+```bash
+for run in {1..10}; do mpiexec -n 12 julia pso_mpi.jl >> resultados_mpi.txt; done;
+```
+
+Ejecutará 10 veces el algorítmo paralelizado utilizando 12 procesadores y guardará en el documento dos cosas, el valor encontrado y el tiempo de ejecución. Lo que nos arrajo los siguientes resultados:
+- El **menor tiempo** de ejecución fue de 5432 ms
+- El **mayor tiempo** de ejecución fue de 8898 ms
+- Con un **promedio** de 6939.83 ms
+- Una **desviación estándar** de 1481.55 ms
+
+Podemos resumir que en general, el tiempo de ejecución de nuestro algorítmo secuencial es de $6939.83 \pm 2903.838 \text{ms}$, resultante del promedio con un error de 1.96 veces la desviación estándar.
+
+Notemos que hay tiempos de ejecución muy similares al secuencial, sin embargo, también obtuvimos más varianza en los resultados. Se podrían hacer más pruebas para tener una mejor idea de los tiempos de ejecución, pero podemos ver que en general es un poco más lento que el secuencial.
+
+#### Análisis del Error
+Como mencionamos anteriormente, también guardamos el valor encontrado en cada ejecución. El mínimo de la función de Rosenbrock en dos dimensiones es bien conocido y se encuentra en el punto (1,1), por lo que podemos sacar un error absoluto real utilizando la norma de la diferencia entre el resultado encontrado y el resultado real. Es decir
+$$
+\varepsilon _{abs} = |(1,1) - X_{pred}|
+$$
+
+Donde obtuvimos que:
+- Error promedio 0.07279
+- Desviación estándar 0.0649
+
+De manera general, estamos $0.07279 \pm 0.10384$ del valor real. Lo que resulta en una precisión confiable dependiendo del caso.
+
