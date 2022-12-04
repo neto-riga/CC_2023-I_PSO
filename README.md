@@ -81,7 +81,7 @@ Podemos resumir que en general, el tiempo de ejecución de nuestro algorítmo se
 Notemos que hay tiempos de ejecución muy similares al secuencial, sin embargo, también obtuvimos más varianza en los resultados. Se podrían hacer más pruebas para tener una mejor idea de los tiempos de ejecución, pero podemos ver que en general es un poco más lento que el secuencial.
 
 #### Análisis del Error
-Como mencionamos anteriormente, también guardamos el valor encontrado en cada ejecución. El mínimo de la función de Rosenbrock en dos dimensiones es bien conocido y se encuentra en el punto (1,1), por lo que podemos sacar un error absoluto real utilizando la norma de la diferencia entre el resultado encontrado y el resultado real. Es decir $\varepsilon _{abs} = |(1,1) - X_{pred}|
+Como mencionamos anteriormente, también guardamos el valor encontrado en cada ejecución. El mínimo de la función de Rosenbrock en dos dimensiones es bien conocido y se encuentra en el punto (1,1), por lo que podemos sacar un error absoluto real utilizando la norma de la diferencia entre el resultado encontrado y el resultado real. Es decir $E _{abs} = \left|(1,1) - X_{pred}\right|
 $.
 
 Donde obtuvimos que:
