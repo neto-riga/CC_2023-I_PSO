@@ -1,32 +1,35 @@
 using MPI
+using Dates
 include("pso_func.jl")
-include("funcion1d_1.jl")
+include("funciones.jl")
 
 MPI.Init()
 comm = MPI.COMM_WORLD
 rank = MPI.Comm_rank(comm)
 size = MPI.Comm_size(comm)
 
-a = -6
-b = 6
-d = 1
-intervalo = (b-a) / size
+if rank == 0
+  inicial = now()
+end
 
-a_actual = a + rank*intervalo
-b_actual = a_actual + intervalo
+d = 2
+a = [-5, -5]
+b = [10, 10]
+Part_N = 1000
+Max_iter = 1000
 
-min_act = pso(d, [a_actual], [b_actual])
-
+pn_act = Part_N ÷ size
+min_act = pso(d, a, b, pn_act, Max_iter)
 if rank != 0
   MPI.send(min_act, comm; dest=0, tag=0)
 else
   RES_MIN = zeros(d)
   for i = 1:size-1
     mssgrcv = MPI.recv(comm; source=i, tag=0)
-    minimo = min(funcion1d_1(RES_MIN[1]), funcion1d_1(mssgrcv[1]))
+    minimo = min(rosenbrock(RES_MIN, d), rosenbrock(mssgrcv, d))
 
     # Guardar mínimo
-    if minimo == funcion1d_1(RES_MIN[1])
+    if minimo == rosenbrock(RES_MIN, d)
       global RES_MIN = RES_MIN
     else
       global RES_MIN = mssgrcv
@@ -35,7 +38,9 @@ else
 end
 
 if rank == 0
-  println("El valor mínimo está en x=$(RES_MIN[1])")
+  println("El valor mínimo está en x=$(RES_MIN)")
+  final = now()
+  println("Tiempo de ejecución: $(final- inicial)")
 end
 
 
