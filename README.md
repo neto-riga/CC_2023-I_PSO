@@ -14,6 +14,7 @@
       - [Análisis de Tiempo](#análisis-de-tiempo-1)
       - [Análisis del Error](#análisis-del-error)
       - [Análisis de Escalabilidad](#análisis-de-escalabilidad-1)
+    - [Conclusiones](#conclusiones)
 
 
 ### Objetivo:
@@ -82,8 +83,7 @@ Podemos resumir que en general, el tiempo de ejecución de nuestro algorítmo se
 Notemos que hay tiempos de ejecución muy similares al secuencial, sin embargo, también obtuvimos más varianza en los resultados. Se podrían hacer más pruebas para tener una mejor idea de los tiempos de ejecución, pero podemos ver que en general es un poco más lento que el secuencial.
 
 #### Análisis del Error
-Como mencionamos anteriormente, también guardamos el valor encontrado en cada ejecución. El mínimo de la función de Rosenbrock en dos dimensiones es bien conocido y se encuentra en el punto (1,1), por lo que podemos sacar un error absoluto real utilizando la norma de la diferencia entre el resultado encontrado y el resultado real. Es decir $\varepsilon_{abs} = ||(1,1) - X_{pred}||
-$.
+Como mencionamos anteriormente, también guardamos el valor encontrado en cada ejecución. El mínimo de la función de Rosenbrock en dos dimensiones es bien conocido y se encuentra en el punto (1,1), por lo que podemos sacar un error absoluto real utilizando la norma de la diferencia entre el resultado encontrado y el resultado real. Es decir $\varepsilon_{abs} = \lVert(1,1) - X_{pred}\rVert$.
 
 Donde obtuvimos que:
 - Error promedio 0.07279
@@ -91,4 +91,9 @@ Donde obtuvimos que:
 
 De manera general, estamos $0.07279 \pm 0.10384$ del valor real. Lo que resulta en una precisión confiable dependiendo del caso.
 
+Es importante hacer un énfasis que aunque trabajemos el mismo número de partículas en el secuencial y en el 
+
 #### Análisis de Escalabilidad
+Al poder manejar cualquier número de dimensiones, partículas, iteraciones y procesadores, la escalabilidad queda determinada únicamente a las limitantes físicas.
+
+### Conclusiones
