@@ -1,6 +1,6 @@
 # Particle Swarm Optimization (PSO) paralell implementation using Julia's wraper for MPI 
 *Integrantes*:
-  - Cázares Trejo Leonardo Damión
+  - Cázares Trejo Leonardo Damián
   - Rivera Gálvez Ernesto
 
 ### Objetivo:
