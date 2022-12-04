@@ -1,0 +1,30 @@
+El valor mínimo está en x=[1.0810785632883704, 1.1681065699382405]
+Tiempo de ejecución: 5443 milliseconds
+El valor mínimo está en x=[0.9961863404690805, 0.9924177051750167]
+Tiempo de ejecución: 5470 milliseconds
+El valor mínimo está en x=[0.9830275319474611, 0.969184103067736]
+Tiempo de ejecución: 8691 millisecond s
+El valor mínimo está en x=[1.0030529670960084, 1.0037122427431364]
+Tiempo de ejecución: 8280 milliseconds
+El valor mínimo está en x=[0.960371366326136, 0.9187746402335968]
+Tiempo de ejecución: 8898 milliseconds
+El valor mínimo está en x=[1.0897167421810163, 1.181871358454825]
+Tiempo de ejecución: 8059 milliseconds
+El valor mínimo está en x=[0.9893592941414433, 0.977185016079769]
+Tiempo de ejecución: 7470 milliseconds
+El valor mínimo está en x=[1.0629120475804168, 1.13053250509628]
+Tiempo de ejecución: 8858 milliseconds
+El valor mínimo está en x=[0.9825413068248343, 0.9643678262733406]
+Tiempo de ejecución: 5710 milliseconds
+El valor mínimo está en x=[1.0192379183683822, 1.0421617951750655]
+Tiempo de ejecución: 5507 milliseconds
+El valor mínimo está en x=[0.9732937022467505, 0.9427096431033082]
+Tiempo de ejecución: 5432 milliseconds
+El valor mínimo está en x=[0.9576916423340309, 0.9162044519040364]
+Tiempo de ejecución: 5460 milliseconds
+
+[5443, 5470, 8691, 8280, 8898, 8059, 7470, 8858, 5710, 5507, 5432, 5460]
+min: 5432
+max: 8898
+media: 6939.833333333333 ms
+std: 1481.5507547461507 ms
