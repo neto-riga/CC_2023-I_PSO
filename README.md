@@ -91,9 +91,8 @@ Donde obtuvimos que:
 
 De manera general, estamos $0.07279 \pm 0.10384$ del valor real. Lo que resulta en una precisión confiable dependiendo del caso.
 
-Es importante hacer un énfasis que aunque trabajemos el mismo número de partículas en el secuencial y en el 
-
 #### Análisis de Escalabilidad
 Al poder manejar cualquier número de dimensiones, partículas, iteraciones y procesadores, la escalabilidad queda determinada únicamente a las limitantes físicas.
 
 ### Conclusiones
+El  secuencial podrá ser ligeramente más rápido que el paralelo, sin embargo, el paralelo ofrece una mejor precisión, pues cuando tenemos un solo enjambre, este se ve influenciado por la mejor posición de una sola partícula. Si tenemos múltiples enjambres, la influencia de la mejor posición en un enjambre no influencia a los demás enjambres, por lo que cada uno puede encontrar un mínimo local de manera más eficiente y el maestro solo encuentra el mínimo global de todos los mínimos locales. Por lo que tenemos una mejor precisión sacrificando un poco el tiempo de ejecución. 
