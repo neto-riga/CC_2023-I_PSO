@@ -37,7 +37,7 @@ Utilizando el siguiente comando en la terminal
 ```bash
 for run in {1..10}; do julia tiempo_secuencial.jl >> resultados_secuencial.txt; done;
 ```
-creamos un ciclo de 10 repeticiones en el que se ejecuta el script de julia y guarda cada tiempo de ejecución en [tiempo_secuencial.txt](https://github.com/neto-riga/CC_2023-I_PSO/blob/main/tiempo_secuencial.jl). Teniendo los siguientes tiempos de ejecución para la función de Rosenbrock de dos dimensiones en el intervalo (-5, 10) en x e y, 1000 partículas y 1000 iteraciones, observamos que:
+creamos un ciclo de 10 repeticiones en el que se ejecuta el script de julia y guarda cada tiempo de ejecución en [tiempo_secuencial.txt](https://github.com/neto-riga/CC_2023-I_PSO/blob/main/results/resultados_secuencial.txt). Teniendo los siguientes tiempos de ejecución para la función de Rosenbrock de dos dimensiones en el intervalo (-5, 10) en x e y, 1000 partículas y 1000 iteraciones, observamos que:
 - El **menor tiempo** de ejecución fue de 5042 ms
 - El **mayor tiempo** de ejecución fue de 5427 ms
 - Con un **promedio** de 5128.6 ms
@@ -72,7 +72,7 @@ Para compararlo con el secuencial, utilizaremos los mismos parámetros tomados e
 for run in {1..10}; do mpiexec -n 12 julia pso_mpi.jl >> resultados_mpi.txt; done;
 ```
 
-Ejecutará 10 veces el algorítmo paralelizado utilizando 12 procesadores y guardará en el documento dos cosas, el valor encontrado y el tiempo de ejecución. Lo que nos arrajo los siguientes resultados:
+Ejecutará 10 veces el algorítmo paralelizado utilizando 12 procesadores y guardará en el documento [resultados_mpi.txt](https://github.com/neto-riga/CC_2023-I_PSO/blob/main/results/resultados_mpi.txt) dos cosas, el valor encontrado y el tiempo de ejecución. Lo que nos arrajo los siguientes resultados:
 - El **menor tiempo** de ejecución fue de 5432 ms
 - El **mayor tiempo** de ejecución fue de 8898 ms
 - Con un **promedio** de 6939.83 ms
