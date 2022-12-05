@@ -96,3 +96,15 @@ Al poder manejar cualquier número de dimensiones, partículas, iteraciones y pr
 
 ### Conclusiones
 El  secuencial podrá ser ligeramente más rápido que el paralelo, sin embargo, el paralelo ofrece una mejor precisión, pues cuando tenemos un solo enjambre, este se ve influenciado por la mejor posición de una sola partícula. Si tenemos múltiples enjambres, la influencia de la mejor posición en un enjambre no influencia a los demás enjambres, por lo que cada uno puede encontrar un mínimo local de manera más eficiente y el maestro solo encuentra el mínimo global de todos los mínimos locales. Por lo que tenemos una mejor precisión sacrificando un poco el tiempo de ejecución. 
+
+El *PSO* nos ofrece una excelente alternativa para enfrentar el problema de optimización, además de la ventaja de poder paralelizar nuestro programa, el *PSO* nos permite optimizar una función sin conocer información como sus derivadas, característica que la mayoría de los métodos de optimización solicitan. Además, el *PSO* sigue siendo un tema de interés de parte de la comunidad científica, la que cual ha explotado la intuición detrás del método para hacer mejoras en el algoritmo que vimos en el documento.
+
+### Referencias
+
+1. Wirsansky, E. (2020). Hands-on genetic algorithms with python: Applying genetic algorithms to solve real-world deep learning and Artificial Intelligence Problems. Packt Publishing Ltd. 
+
+2. Gridin, I. (2021). Learning genetic algorithms with python. BPB Publications. 
+
+3. Cuevas, O. E. V. (2016). Optimización de Algoritmos programados con MATLAB (1.a ed.). Marcombo.
+
+4. Maurice Clerc. Standard Particle Swarm Optimisation. date. ffhal-00764996ff
