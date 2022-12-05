@@ -55,4 +55,4 @@ for run in {1..12}; do mpiexec -n 12 julia pso_mpi.jl >> resultados_mpi.txt; don
 Por lo que podemos estimar tiempos de ejecución de: $6939.83 \pm 2903.838 \text{ms}$ para el tiempo y un error absoluto de: $0.07279 \pm 0.10384$.
 
 ### Eficiencia
-Cuando se realiza PSO de forma secuencial, todas las partículas se ven atraídas a un solo punto, el mejor de todos. Sin embargo, cuando se realiza PSO de la forma en que lo hizimos, lapart´
+Cuando se realiza PSO de forma secuencial, todas las partículas se ven atraídas a un solo punto, el mejor de todos, sin embargo, este punto puede ser el menor local, no el global. Cuando se realiza PSO paralelizando *enjambres* cada enjambre puede encontrar diferentes mínimos globales sin afectarse entre ellos, esto hace el algorítmo más enriquecedor y por lo tanto tiene una mejor precisión sin dejar de lado la eficiencia, pues a pesar de utilizar múltiples enjambres, todos se trabajan de manera simultánea.
